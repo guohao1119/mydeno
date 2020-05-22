@@ -16,6 +16,7 @@
     "ordered-imports": false,
     "quotemark": [true, "single"],
     "trailing-comma": [false, {"multiline": "never", "singleline": "never"}],
-    "semicolon": [false, "always"]
+    "semicolon": [false, "always"],
+    "no-console": false
   }
 }

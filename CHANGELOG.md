@@ -3,3 +3,4 @@
 ##### 3 封装header
 ##### 4 封装home
 ##### 5 封装footer
+##### 6 home完成，新增install

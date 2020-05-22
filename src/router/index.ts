@@ -9,6 +9,10 @@ const routes: RouteConfig[] = [
     path: '/',
     name: 'Home',
     component: Home,
+  }, {
+    path: '/install',
+    name: 'Install',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Install.vue')
   },
   {
     path: '/about',

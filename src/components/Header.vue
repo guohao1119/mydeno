@@ -5,13 +5,10 @@
       <div class="title">{{title}}</div>
 
       <div class="nav-item" v-for="item in navList" :key="item.id">
-        <a :href="item.href">{{ item.label }}</a>
+        <a @click="navClick(item.href)">{{ item.label }}</a>
       </div>
       <img class="github" :src="github" alt="git">
     </nav>
-    <div class="div-img">
-      <img :src="deno" alt="deno">
-    </div>
   </div>
 </template>
 
@@ -28,17 +25,21 @@ interface NavItem {
 export default class Header extends Vue {
   private logo: object = require('@/assets/images/logo.svg')
   private github: object = require('@/assets/images/github.svg')
-  private deno: object = require('@/assets/images/deno.jpg')
   private title: string = 'Deno'
   private navList!: NavItem[]
 
   private created() {
     this.navList = [
-      { label: '安装', href: '' },
+      { label: '安装', href: 'Install' },
       { label: '手册', href: '' },
       { label: '标准库', href: '' },
       { label: '第三方模块', href: '' },
     ]
+  }
+
+  private navClick(href: string) {
+    console.log(href)
+    this.$router.push({name: href})
   }
 }
 </script>
@@ -63,11 +64,5 @@ nav
 .github
   width 30px
   margin-left 2.5rem
-.div-img
-  width 100%
-  background-color rgb(47, 46, 44)
-  img
-    width 100%
-    max-width 1024px
 </style>
  
